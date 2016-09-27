@@ -5,7 +5,6 @@ namespace FPL.Data.Models.FullStats
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
 
     using Newtonsoft.Json;
     
@@ -14,6 +13,22 @@ namespace FPL.Data.Models.FullStats
     /// </summary>
     public class ExplainFixture : ModelBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExplainFixture"/> class.
+        /// </summary>
+        public ExplainFixture()
+        {
+            this.Explains = new List<Explain>();
+        }
+
+        /// <summary>
+        /// Gets or sets the explains.
+        /// </summary>
+        /// <value>
+        /// The explains.
+        /// </value>
+        public virtual IList<Explain> Explains { get; set; }
+
         /// <summary>
         /// Gets or sets the identifier.
         /// </summary>

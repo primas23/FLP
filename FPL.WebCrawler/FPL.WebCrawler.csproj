@@ -35,6 +35,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,8 +54,13 @@
       <Project>{C55CDB95-A7A3-40BE-B774-62968C1B6BF3}</Project>
       <Name>FPL.Data.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FPL.Data\FPL.Data.csproj">
+      <Project>{9CA0CAB2-5A5C-4B49-A190-95F9520E900C}</Project>
+      <Name>FPL.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

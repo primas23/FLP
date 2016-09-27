@@ -1,18 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text.RegularExpressions;
-using FPL.Data;
-using FPL.Data.Models;
-using FPL.Data.Models.FullStats;
-using FPL.WebCrawler;
-using Newtonsoft.Json;
-
+﻿// <copyright file="Startup.cs" company="Primas">
+//     Company copyright tag.
+// </copyright>
 namespace FPL.Console
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.IO;
+    using System.Linq;
+    using System.Net;
+    using System.Text.RegularExpressions;
+
+    using FPL.Data;
+    using FPL.Data.Common;
+    using FPL.Data.Models;
+    using FPL.Data.Models.FullStats;
+    using FPL.WebCrawler;
+
+    using Newtonsoft.Json;
+
+
     /// <summary>
     /// The startup class of the console
     /// </summary>
@@ -34,38 +42,40 @@ namespace FPL.Console
             //    db.SaveChanges();
             //}
 
-            //List<PlayerInformation> informations = new List<PlayerInformation>();
+            List<PlayerInformation> informations = new List<PlayerInformation>();
 
-            //for (int i = 1; i < 10; i++)
-            //{
-            //    var infoPl = FantasyPremierLeague.GetPlayerInformation(i);
-            //    infoPl.UrlId = i;
-
-            //    informations.Add(infoPl);
-            //    System.Console.WriteLine("Added player with id={0} to info List", i);
-            //}
-
-            //using (var db = new FplContext())
-            //{
-            //    for (int i = 0; i < informations.Count; i++)
-            //    {
-            //        db.PlayerInformations.Add(informations[i]);
-            //        System.Console.WriteLine("Added player with id={0} to db", i);
-            //    }
-
-            //    db.SaveChanges();
-            //}
-
-
+            for (int i = 1; i < 10; i++)
+            {
+                var infoPl = FantasyPremierLeague.GetPlayerInformationFromWeb(i);
+                informations.Add(infoPl);
+                System.Console.WriteLine("Added player with id={0} to info List", i);
+            }
 
             using (var db = new FplContext())
             {
-                PlayerInformation information = FantasyPremierLeague.GetPlayerInformation(4);
-                var eden = db.PlayerInformations
-                    .FirstOrDefault(p => p.Id == 4);
-                System.Console.WriteLine();
+                for (int i = 0; i < informations.Count; i++)
+                {
+                    PlayerInformation pi = PlayerInformationDbMapper.MapPlayerInformationFromDataBase(informations[i], db);
 
+                    db.PlayerInformations.AddOrUpdate(pi);
+                    db.SaveChanges();
+
+                    Console.WriteLine("Added player with id={0} to db", i);
+                }
+
+                db.SaveChanges();
             }
+
+            Console.WriteLine("Done");
+
+            //using (var db = new FplContext())
+            //{
+            //    PlayerInformation information = FantasyPremierLeague.GetPlayerInformation(4);
+            //    var eden = db.PlayerInformations
+            //        .FirstOrDefault(p => p.Id == 4);
+            //    System.Console.WriteLine();
+
+            //}
 
             //using (var db = new FplContext())
             //{

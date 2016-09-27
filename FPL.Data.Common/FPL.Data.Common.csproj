@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{910B82EA-F050-42A5-9521-29142C9B2E7B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{58498F3B-0CD7-456E-A096-644BFE234808}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FPL.Console</RootNamespace>
-    <AssemblyName>FPL.Console</AssemblyName>
+    <RootNamespace>FPL.Data.Common</RootNamespace>
+    <AssemblyName>FPL.Data.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,10 +38,6 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -55,30 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Startup.cs" />
+    <Compile Include="PlayerInformationDbMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FPL.Data.Common\FPL.Data.Common.csproj">
-      <Project>{58498F3B-0CD7-456E-A096-644BFE234808}</Project>
-      <Name>FPL.Data.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FPL.Data.Models\FPL.Data.Models.csproj">
       <Project>{C55CDB95-A7A3-40BE-B774-62968C1B6BF3}</Project>
       <Name>FPL.Data.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\FPL.Data\FPL.Data.csproj">
-      <Project>{9CA0CAB2-5A5C-4B49-A190-95F9520E900C}</Project>
+      <Project>{9ca0cab2-5a5c-4b49-a190-95f9520e900c}</Project>
       <Name>FPL.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FPL.WebCrawler\FPL.WebCrawler.csproj">
-      <Project>{A6B0E8C5-A6C8-4EF2-97F9-E15B1DEB5E14}</Project>
-      <Name>FPL.WebCrawler</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

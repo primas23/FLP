@@ -6,11 +6,13 @@ namespace FPL.WebCrawler
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
     using System.Net;
     using System.Text.RegularExpressions;
-
+    
     using Newtonsoft.Json;
 
+    using Data;
     using Data.Models.FullStats;
 
     /// <summary>
@@ -43,7 +45,7 @@ namespace FPL.WebCrawler
         /// or
         /// No history summary
         /// </exception>
-        public static PlayerInformation GetPlayerInformation(int id)
+        public static PlayerInformation GetPlayerInformationFromWeb(int id)
         {
             PlayerInformation info = new PlayerInformation();
 
@@ -59,6 +61,7 @@ namespace FPL.WebCrawler
                 json = ReplaceFixture(json, Constants.ExplainFixturePattern, Constants.ExplainFixtureValueToAdd, "No fixture");
 
                 info = JsonConvert.DeserializeObject<PlayerInformation>(json);
+                info.UrlId = id;
             }
 
             return info;
@@ -86,6 +89,7 @@ namespace FPL.WebCrawler
             {
                 throw new NullReferenceException(errorMessage);
             }
+
             return json;
         }
 

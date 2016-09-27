@@ -3,6 +3,10 @@
 // </copyright>
 namespace FPL.Data.Models.FullStats
 {
+    /// <summary>
+    /// Extension of the Model base class with the PlayerInformation properties
+    /// </summary>
+    /// <seealso cref="FPL.Data.Models.FullStats.ModelBase" />
     public class FullStatsBase : ModelBase
     {
         /// <summary>

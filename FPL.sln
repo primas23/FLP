@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPL.WebCrawler", "FPL.WebCr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPL.Data", "FPL.Data\FPL.Data.csproj", "{9CA0CAB2-5A5C-4B49-A190-95F9520E900C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPL.Data.Common", "FPL.Data.Common\FPL.Data.Common.csproj", "{58498F3B-0CD7-456E-A096-644BFE234808}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9CA0CAB2-5A5C-4B49-A190-95F9520E900C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CA0CAB2-5A5C-4B49-A190-95F9520E900C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CA0CAB2-5A5C-4B49-A190-95F9520E900C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58498F3B-0CD7-456E-A096-644BFE234808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58498F3B-0CD7-456E-A096-644BFE234808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58498F3B-0CD7-456E-A096-644BFE234808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58498F3B-0CD7-456E-A096-644BFE234808}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
