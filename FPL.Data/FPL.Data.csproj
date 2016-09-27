@@ -78,6 +78,18 @@
     <Compile Include="Migrations\201609270841121_AddedVirtual.Designer.cs">
       <DependentUpon>201609270841121_AddedVirtual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609271317372_AddedExplainFixtureExpailRelation.cs" />
+    <Compile Include="Migrations\201609271317372_AddedExplainFixtureExpailRelation.Designer.cs">
+      <DependentUpon>201609271317372_AddedExplainFixtureExpailRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609271320353_AddedExplainFixtureExpailRelation3.cs" />
+    <Compile Include="Migrations\201609271320353_AddedExplainFixtureExpailRelation3.Designer.cs">
+      <DependentUpon>201609271320353_AddedExplainFixtureExpailRelation3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609271322184_AddedExplainFixtureExpailRelation4.cs" />
+    <Compile Include="Migrations\201609271322184_AddedExplainFixtureExpailRelation4.Designer.cs">
+      <DependentUpon>201609271322184_AddedExplainFixtureExpailRelation4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -112,6 +124,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609270841121_AddedVirtual.resx">
       <DependentUpon>201609270841121_AddedVirtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609271317372_AddedExplainFixtureExpailRelation.resx">
+      <DependentUpon>201609271317372_AddedExplainFixtureExpailRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609271320353_AddedExplainFixtureExpailRelation3.resx">
+      <DependentUpon>201609271320353_AddedExplainFixtureExpailRelation3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609271322184_AddedExplainFixtureExpailRelation4.resx">
+      <DependentUpon>201609271322184_AddedExplainFixtureExpailRelation4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
