@@ -17,7 +17,7 @@ namespace FPL.Data.Models.FullStats
         /// The explain details.
         /// </value>
         [JsonProperty("explainDetails")]
-        public ExplainDetails ExplainDetails { get; set; }
+        public virtual ExplainDetails ExplainDetails { get; set; }
 
         /// <summary>
         /// Gets or sets the explain fixture.
@@ -26,6 +26,6 @@ namespace FPL.Data.Models.FullStats
         /// The explain fixture.
         /// </value>
         [JsonProperty("fixtureExplain")]
-        public ExplainFixture ExplainFixture { get; set; }
+        public virtual ExplainFixture ExplainFixture { get; set; }
     }
 }

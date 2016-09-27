@@ -3,7 +3,7 @@
 // </copyright>
 namespace FPL.Data.Models.FullStats
 {
-    public class FullStatsBase : Modelidentifier
+    public class FullStatsBase : ModelBase
     {
         /// <summary>
         /// Gets or sets the player information identifier.
@@ -19,6 +19,6 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The player information.
         /// </value>
-        public PlayerInformation PlayerInformation { get; set; }
+        public virtual PlayerInformation PlayerInformation { get; set; }
     }
 }

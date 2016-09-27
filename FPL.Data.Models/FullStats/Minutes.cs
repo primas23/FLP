@@ -8,7 +8,7 @@ namespace FPL.Data.Models.FullStats
     /// <summary>
     /// The Minutes class
     /// </summary>
-    public class Minutes : FullStatsBase
+    public class Minutes : ModelBase
     {
         /// <summary>
         /// Gets or sets the points.

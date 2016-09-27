@@ -8,7 +8,7 @@ namespace FPL.Data.Models.FullStats
     /// <summary>
     /// The Bonus class
     /// </summary>
-    public class Bonus : FullStatsBase
+    public class Bonus : ModelBase
     {
         /// <summary>
         /// Gets or sets the points.

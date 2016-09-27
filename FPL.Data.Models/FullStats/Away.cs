@@ -8,7 +8,7 @@ namespace FPL.Data.Models.FullStats
     /// <summary>
     /// The Player Away stats class
     /// </summary>
-    public class Away : FullStatsBase
+    public class Away : ModelBase
     {
         /// <summary>
         /// Gets or sets the value.

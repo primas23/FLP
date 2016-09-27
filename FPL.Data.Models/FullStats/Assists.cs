@@ -10,7 +10,7 @@ namespace FPL.Data.Models.FullStats
     /// <summary>
     /// The Player Assists class
     /// </summary>
-    public class Assists : FullStatsBase
+    public class Assists : ModelBase
     {
         /// <summary>
         /// Gets or sets the away assists.
@@ -19,7 +19,7 @@ namespace FPL.Data.Models.FullStats
         /// The away.
         /// </value>
         [JsonProperty("away")]
-        public IList<object> Away { get; set; }
+        public virtual IList<object> Away { get; set; }
 
         /// <summary>
         /// Gets or sets the home assists.
@@ -28,6 +28,6 @@ namespace FPL.Data.Models.FullStats
         /// The home.
         /// </value>
         [JsonProperty("home")]
-        public IList<Home> Home { get; set; }
+        public virtual IList<Home> Home { get; set; }
     }
 }

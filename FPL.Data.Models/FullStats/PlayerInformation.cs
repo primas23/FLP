@@ -10,7 +10,7 @@ namespace FPL.Data.Models.FullStats
     /// <summary>
     /// All the player information form the Fantasy Premier League
     /// </summary>
-    public class PlayerInformation
+    public class PlayerInformation : ModelBase
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PlayerInformation"/> class.
@@ -24,14 +24,6 @@ namespace FPL.Data.Models.FullStats
             this.Fixtures = new List<Fixture>();
             this.History = new List<History>();
         }
-
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        public int Id { get; set; }
 
         /// <summary>
         /// Gets or sets the URL identifier.

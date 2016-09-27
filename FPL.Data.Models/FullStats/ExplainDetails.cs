@@ -8,16 +8,8 @@ namespace FPL.Data.Models.FullStats
     /// <summary>
     /// The Explain Details class
     /// </summary>
-    public class ExplainDetails
+    public class ExplainDetails : ModelBase
     {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        public int Id { get; set; }
-        
         /// <summary>
         /// Gets or sets the bonus.
         /// </summary>
@@ -25,7 +17,7 @@ namespace FPL.Data.Models.FullStats
         /// The bonus.
         /// </value>
         [JsonProperty("bonus")]
-        public Bonus Bonus { get; set; }
+        public virtual Bonus Bonus { get; set; }
 
         /// <summary>
         /// Gets or sets the clean sheets.
@@ -34,7 +26,7 @@ namespace FPL.Data.Models.FullStats
         /// The clean sheets.
         /// </value>
         [JsonProperty("clean_sheets")]
-        public CleanSheets CleanSheets { get; set; }
+        public virtual CleanSheets CleanSheets { get; set; }
 
         /// <summary>
         /// Gets or sets the minutes.
@@ -43,7 +35,7 @@ namespace FPL.Data.Models.FullStats
         /// The minutes.
         /// </value>
         [JsonProperty("minutes")]
-        public Minutes Minutes { get; set; }
+        public virtual Minutes Minutes { get; set; }
 
         /// <summary>
         /// Gets or sets the goals scored.
@@ -52,6 +44,6 @@ namespace FPL.Data.Models.FullStats
         /// The goals scored.
         /// </value>
         [JsonProperty("goals_scored")]
-        public GoalsScored GoalsScored { get; set; }
+        public virtual GoalsScored GoalsScored { get; set; }
     }
 }

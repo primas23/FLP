@@ -11,7 +11,7 @@ namespace FPL.Data.Models.FullStats
     /// <summary>
     /// The ExplainFixture class
     /// </summary>
-    public class ExplainFixture : FullStatsBase
+    public class ExplainFixture : ModelBase
     {
         /// <summary>
         /// Gets or sets the identifier.
@@ -74,7 +74,7 @@ namespace FPL.Data.Models.FullStats
         /// The stats.
         /// </value>
         [JsonProperty("stats")]
-        public IList<Stat> Stats { get; set; }
+        public virtual IList<Stat> Stats { get; set; }
 
         /// <summary>
         /// Gets or sets the code.

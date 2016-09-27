@@ -10,7 +10,7 @@ namespace FPL.Data.Models.FullStats
     /// <summary>
     /// The Penalties Saved
     /// </summary>
-    public class PenaltiesSaved : FullStatsBase
+    public class PenaltiesSaved : ModelBase
     {
         /// <summary>
         /// Gets or sets the away.
@@ -19,7 +19,7 @@ namespace FPL.Data.Models.FullStats
         /// The away.
         /// </value>
         [JsonProperty("away")]
-        public IList<Away> Away { get; set; }
+        public virtual IList<Away> Away { get; set; }
 
         /// <summary>
         /// Gets or sets the home.
@@ -28,6 +28,6 @@ namespace FPL.Data.Models.FullStats
         /// The home.
         /// </value>
         [JsonProperty("home")]
-        public IList<Home> Home { get; set; }
+        public virtual IList<Home> Home { get; set; }
     }
 }

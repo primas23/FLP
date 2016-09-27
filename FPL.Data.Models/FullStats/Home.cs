@@ -8,7 +8,7 @@ namespace FPL.Data.Models.FullStats
     /// <summary>
     /// The Home class
     /// </summary>
-    public class Home : FullStatsBase
+    public class Home : ModelBase
     {
         /// <summary>
         /// Gets or sets the value.

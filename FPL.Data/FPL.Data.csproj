@@ -58,6 +58,26 @@
     <Compile Include="Migrations\201609270757356_RemovePlayerInfoFormExplainDetails.Designer.cs">
       <DependentUpon>201609270757356_RemovePlayerInfoFormExplainDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609270824229_ModleBaseExctracted.cs" />
+    <Compile Include="Migrations\201609270824229_ModleBaseExctracted.Designer.cs">
+      <DependentUpon>201609270824229_ModleBaseExctracted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609270827436_ModleBaseAbstract.cs" />
+    <Compile Include="Migrations\201609270827436_ModleBaseAbstract.Designer.cs">
+      <DependentUpon>201609270827436_ModleBaseAbstract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609270829370_ModleBaseAbstract2.cs" />
+    <Compile Include="Migrations\201609270829370_ModleBaseAbstract2.Designer.cs">
+      <DependentUpon>201609270829370_ModleBaseAbstract2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609270831373_AddedModelBaseToPlayerInfo.cs" />
+    <Compile Include="Migrations\201609270831373_AddedModelBaseToPlayerInfo.Designer.cs">
+      <DependentUpon>201609270831373_AddedModelBaseToPlayerInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609270841121_AddedVirtual.cs" />
+    <Compile Include="Migrations\201609270841121_AddedVirtual.Designer.cs">
+      <DependentUpon>201609270841121_AddedVirtual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +97,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609270757356_RemovePlayerInfoFormExplainDetails.resx">
       <DependentUpon>201609270757356_RemovePlayerInfoFormExplainDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609270824229_ModleBaseExctracted.resx">
+      <DependentUpon>201609270824229_ModleBaseExctracted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609270827436_ModleBaseAbstract.resx">
+      <DependentUpon>201609270827436_ModleBaseAbstract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609270829370_ModleBaseAbstract2.resx">
+      <DependentUpon>201609270829370_ModleBaseAbstract2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609270831373_AddedModelBaseToPlayerInfo.resx">
+      <DependentUpon>201609270831373_AddedModelBaseToPlayerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609270841121_AddedVirtual.resx">
+      <DependentUpon>201609270841121_AddedVirtual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

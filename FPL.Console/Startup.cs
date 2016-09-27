@@ -34,34 +34,38 @@ namespace FPL.Console
             //    db.SaveChanges();
             //}
 
-            List<PlayerInformation> informations = new List<PlayerInformation>();
+            //List<PlayerInformation> informations = new List<PlayerInformation>();
 
-            for (int i = 1; i < 10; i++)
-            {
-                informations.Add(FantasyPremierLeague.GetPlayerInformation(i));
-                System.Console.WriteLine("Added player with id={0} to info List", i);
-            }
+            //for (int i = 1; i < 10; i++)
+            //{
+            //    var infoPl = FantasyPremierLeague.GetPlayerInformation(i);
+            //    infoPl.UrlId = i;
 
-            using (var db = new FplContext())
-            {
-                for (int i = 0; i < informations.Count; i++)
-                {
-                    db.PlayerInformations.Add(informations[i]);
-                    System.Console.WriteLine("Added player with id={0} to db", i);
-                }
-
-                db.SaveChanges();
-            }
-
-
+            //    informations.Add(infoPl);
+            //    System.Console.WriteLine("Added player with id={0} to info List", i);
+            //}
 
             //using (var db = new FplContext())
             //{
-            //    //PlayerInformation information = FantasyPremierLeague.GetPlayerInformation(82);
-            //    var eden = db.PlayerInformations
-            //        .FirstOrDefault();
+            //    for (int i = 0; i < informations.Count; i++)
+            //    {
+            //        db.PlayerInformations.Add(informations[i]);
+            //        System.Console.WriteLine("Added player with id={0} to db", i);
+            //    }
 
+            //    db.SaveChanges();
             //}
+
+
+
+            using (var db = new FplContext())
+            {
+                PlayerInformation information = FantasyPremierLeague.GetPlayerInformation(4);
+                var eden = db.PlayerInformations//.Include(p => p.Explain.Select(e => e.ExplainDetails))
+                    .FirstOrDefault(p => p.Id == 4);
+                System.Console.WriteLine();
+
+            }
 
             //using (var db = new FplContext())
             //{

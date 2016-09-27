@@ -8,7 +8,7 @@ namespace FPL.Data.Models.FullStats
     /// <summary>
     /// The Clean sheets class
     /// </summary>
-    public class CleanSheets : FullStatsBase
+    public class CleanSheets : ModelBase
     {
         /// <summary>
         /// Gets or sets the points.

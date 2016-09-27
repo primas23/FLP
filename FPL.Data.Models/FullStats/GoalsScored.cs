@@ -8,7 +8,7 @@ namespace FPL.Data.Models.FullStats
     /// <summary>
     /// The GoalsScored class
     /// </summary>
-    public class GoalsScored : FullStatsBase
+    public class GoalsScored : ModelBase
     {
         /// <summary>
         /// Gets or sets the points.

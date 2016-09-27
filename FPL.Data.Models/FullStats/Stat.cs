@@ -8,7 +8,7 @@ namespace FPL.Data.Models.FullStats
     /// <summary>
     /// The Stats class
     /// </summary>
-    public class Stat : Modelidentifier
+    public class Stat : ModelBase
     {
         /// <summary>
         /// Gets or sets the goals scored.
@@ -17,7 +17,7 @@ namespace FPL.Data.Models.FullStats
         /// The goals scored.
         /// </value>
         [JsonProperty("goals_scored")]
-        public GoalsScored GoalsScored { get; set; }
+        public virtual GoalsScored GoalsScored { get; set; }
 
         /// <summary>
         /// Gets or sets the assists.
@@ -26,7 +26,7 @@ namespace FPL.Data.Models.FullStats
         /// The assists.
         /// </value>
         [JsonProperty("assists")]
-        public Assists Assists { get; set; }
+        public virtual Assists Assists { get; set; }
 
         /// <summary>
         /// Gets or sets the own goals.
@@ -35,7 +35,7 @@ namespace FPL.Data.Models.FullStats
         /// The own goals.
         /// </value>
         [JsonProperty("own_goals")]
-        public OwnGoals OwnGoals { get; set; }
+        public virtual OwnGoals OwnGoals { get; set; }
 
         /// <summary>
         /// Gets or sets the penalties saved.
@@ -44,7 +44,7 @@ namespace FPL.Data.Models.FullStats
         /// The penalties saved.
         /// </value>
         [JsonProperty("penalties_saved")]
-        public PenaltiesSaved PenaltiesSaved { get; set; }
+        public virtual PenaltiesSaved PenaltiesSaved { get; set; }
 
         /// <summary>
         /// Gets or sets the penalties missed.
@@ -53,7 +53,7 @@ namespace FPL.Data.Models.FullStats
         /// The penalties missed.
         /// </value>
         [JsonProperty("penalties_missed")]
-        public PenaltiesMissed PenaltiesMissed { get; set; }
+        public virtual PenaltiesMissed PenaltiesMissed { get; set; }
 
         /// <summary>
         /// Gets or sets the yellow cards.
@@ -62,7 +62,7 @@ namespace FPL.Data.Models.FullStats
         /// The yellow cards.
         /// </value>
         [JsonProperty("yellow_cards")]
-        public YellowCards YellowCards { get; set; }
+        public virtual YellowCards YellowCards { get; set; }
 
         /// <summary>
         /// Gets or sets the red cards.
@@ -71,7 +71,7 @@ namespace FPL.Data.Models.FullStats
         /// The red cards.
         /// </value>
         [JsonProperty("red_cards")]
-        public RedCards RedCards { get; set; }
+        public virtual RedCards RedCards { get; set; }
 
         /// <summary>
         /// Gets or sets the saves.
@@ -80,7 +80,7 @@ namespace FPL.Data.Models.FullStats
         /// The saves.
         /// </value>
         [JsonProperty("saves")]
-        public Saves Saves { get; set; }
+        public virtual Saves Saves { get; set; }
 
         /// <summary>
         /// Gets or sets the bonus.
@@ -89,7 +89,7 @@ namespace FPL.Data.Models.FullStats
         /// The bonus.
         /// </value>
         [JsonProperty("bonus")]
-        public Bonus Bonus { get; set; }
+        public virtual Bonus Bonus { get; set; }
 
         /// <summary>
         /// Gets or sets the BPS.
@@ -98,6 +98,6 @@ namespace FPL.Data.Models.FullStats
         /// The BPS.
         /// </value>
         [JsonProperty("bps")]
-        public Bps Bps { get; set; }
+        public virtual Bps Bps { get; set; }
     }
 }
