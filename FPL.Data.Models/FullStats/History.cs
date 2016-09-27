@@ -4,6 +4,7 @@
 namespace FPL.Data.Models.FullStats
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
 
     using Newtonsoft.Json;
 

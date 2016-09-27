@@ -61,7 +61,7 @@ namespace FPL.Console
             using (var db = new FplContext())
             {
                 PlayerInformation information = FantasyPremierLeague.GetPlayerInformation(4);
-                var eden = db.PlayerInformations//.Include(p => p.Explain.Select(e => e.ExplainDetails))
+                var eden = db.PlayerInformations
                     .FirstOrDefault(p => p.Id == 4);
                 System.Console.WriteLine();
 

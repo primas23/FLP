@@ -3,8 +3,10 @@
 // </copyright>
 namespace FPL.Data.Models.FullStats
 {
-    using Newtonsoft.Json;
+    using System.ComponentModel.DataAnnotations;
 
+    using Newtonsoft.Json;
+    
     /// <summary>
     /// The past history class
     /// </summary>
