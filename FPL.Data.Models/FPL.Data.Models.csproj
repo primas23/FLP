@@ -85,6 +85,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FPL.Data.Common\FPL.Data.Common.csproj">
+      <Project>{58498F3B-0CD7-456E-A096-644BFE234808}</Project>
+      <Name>FPL.Data.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

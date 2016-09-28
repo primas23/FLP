@@ -7,11 +7,13 @@ namespace FPL.Data.Models.FullStats
     using System.Collections.Generic;
 
     using Newtonsoft.Json;
-    
+
+    using FPL.Data.Common.Contracts;
+
     /// <summary>
     /// The ExplainFixture class
     /// </summary>
-    public class ExplainFixture : ModelBase
+    public class ExplainFixture : ModelBase, IFantasyPremierLeagueId
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExplainFixture"/> class.

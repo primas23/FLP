@@ -71,6 +71,10 @@
       <Project>{C55CDB95-A7A3-40BE-B774-62968C1B6BF3}</Project>
       <Name>FPL.Data.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FPL.Data.Utilities\FPL.Data.Utilities.csproj">
+      <Project>{747f84d1-b972-4998-8603-e2ccdde3979d}</Project>
+      <Name>FPL.Data.Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FPL.Data\FPL.Data.csproj">
       <Project>{9CA0CAB2-5A5C-4B49-A190-95F9520E900C}</Project>
       <Name>FPL.Data</Name>

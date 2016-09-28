@@ -1,18 +1,38 @@
 // <copyright file="Fixture.cs" company="Primas">
 //     Company copyright tag.
 // </copyright>
+
+using System.Collections.Generic;
+
 namespace FPL.Data.Models.FullStats
 {
     using System;
-    using System.ComponentModel.DataAnnotations;
 
     using Newtonsoft.Json;
-    
+
+    using FPL.Data.Common.Contracts;
+
     /// <summary>
     /// Fixture class
     /// </summary>
-    public class Fixture : FullStatsBase
+    public class Fixture : ModelBase, IFantasyPremierLeagueId
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Fixture"/> class.
+        /// </summary>
+        public Fixture()
+        {
+            this.PlayerInformations = new List<PlayerInformation>();
+        }
+
+        /// <summary>
+        /// Gets or sets the player informations.
+        /// </summary>
+        /// <value>
+        /// The player informations.
+        /// </value>
+        public IList<PlayerInformation> PlayerInformations { get; set; }
+
         /// <summary>
         /// Gets or sets the identifier.
         /// </summary>

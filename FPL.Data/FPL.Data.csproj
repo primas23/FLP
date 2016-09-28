@@ -90,6 +90,14 @@
     <Compile Include="Migrations\201609271322184_AddedExplainFixtureExpailRelation4.Designer.cs">
       <DependentUpon>201609271322184_AddedExplainFixtureExpailRelation4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609281232213_AddedPlayerInfosToFixtureSumm.cs" />
+    <Compile Include="Migrations\201609281232213_AddedPlayerInfosToFixtureSumm.Designer.cs">
+      <DependentUpon>201609281232213_AddedPlayerInfosToFixtureSumm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609281237578_AddManyToManyInFixtures.cs" />
+    <Compile Include="Migrations\201609281237578_AddManyToManyInFixtures.Designer.cs">
+      <DependentUpon>201609281237578_AddManyToManyInFixtures.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -133,6 +141,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609271322184_AddedExplainFixtureExpailRelation4.resx">
       <DependentUpon>201609271322184_AddedExplainFixtureExpailRelation4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609281232213_AddedPlayerInfosToFixtureSumm.resx">
+      <DependentUpon>201609281232213_AddedPlayerInfosToFixtureSumm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609281237578_AddManyToManyInFixtures.resx">
+      <DependentUpon>201609281237578_AddManyToManyInFixtures.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

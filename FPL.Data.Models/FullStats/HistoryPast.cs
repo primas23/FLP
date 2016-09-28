@@ -4,12 +4,14 @@
 namespace FPL.Data.Models.FullStats
 {
     using Newtonsoft.Json;
-    
+
+    using FPL.Data.Common.Contracts;
+
     /// <summary>
     /// The past history class
     /// </summary>
-    public class HistoryPast : FullStatsBase
-    {   
+    public class HistoryPast : FullStatsBase, IFantasyPremierLeagueId
+    {
         /// <summary>
         /// Gets or sets the identifier.
         /// </summary>

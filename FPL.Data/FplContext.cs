@@ -36,5 +36,37 @@ namespace FPL.Data
         /// The fixtures summaries.
         /// </value>
         public IDbSet<FixturesSummary> FixturesSummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets the histories.
+        /// </summary>
+        /// <value>
+        /// The histories.
+        /// </value>
+        public IDbSet<History> Histories { get; set; }
+
+        /// <summary>
+        /// Gets or sets the history summaries.
+        /// </summary>
+        /// <value>
+        /// The history summaries.
+        /// </value>
+        public IDbSet<HistorySummary> HistorySummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets the history pasts.
+        /// </summary>
+        /// <value>
+        /// The history pasts.
+        /// </value>
+        public IDbSet<HistoryPast> HistoryPasts { get; set; }
+
+        /// <summary>
+        /// Gets or sets the fixtures.
+        /// </summary>
+        /// <value>
+        /// The fixtures.
+        /// </value>
+        public IDbSet<Fixture> Fixtures { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace FPL.Console
     using System.Text.RegularExpressions;
 
     using FPL.Data;
-    using FPL.Data.Common;
+    using FPL.Data.Utilities;
     using FPL.Data.Models;
     using FPL.Data.Models.FullStats;
     using FPL.WebCrawler;
