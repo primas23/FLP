@@ -1,6 +1,9 @@
 ﻿// <copyright file="Startup.cs" company="Primas">
 //     Company copyright tag.
 // </copyright>
+
+using FPL.Data.Models.SummaryStats;
+
 namespace FPL.Console
 {
     using System;
@@ -31,8 +34,7 @@ namespace FPL.Console
         public static void Main()
         {
             /*
-            PlayerInformation information = FantasyPremierLeague.GetPlayerInformation(82);
-            information.UrlId = 82;
+            PlayerInformation information = FantasyPremierLeague.GetPlayerInformationFromWeb(82);
             information.FirstName = "Eden";
             information.LastName = "Hazard";
 
@@ -43,7 +45,8 @@ namespace FPL.Console
             }
             */
 
-            List<PlayerInformation> informations = new List<PlayerInformation>();
+            /*
+             List<PlayerInformation> informations = new List<PlayerInformation>();
 
             for (int i = 1; i < 10; i++)
             {
@@ -68,24 +71,26 @@ namespace FPL.Console
             }
 
             Console.WriteLine("Done");
+             */
 
-            /*
+            /**/
             using (var db = new FplContext())
             {
-                PlayerInformation information = FantasyPremierLeague.GetPlayerInformation(4);
-                var eden = db.PlayerInformations
-                    .FirstOrDefault(p => p.Id == 4);
-                System.Console.WriteLine();
+                PlayerInformation edenHazard = db
+                    .PlayerInformations
+                    .FirstOrDefault(p => p.Id == 7);
 
-            }
+                FantasyPremierLeagueInfoSummary hazardSummary = new FantasyPremierLeagueInfoSummary(edenHazard);
 
-            using (var db = new FplContext())
-            {
-                var plyer = db.PlayerInformations.FirstOrDefault(p => p.Id == 1);
-                db.PlayerInformations.Remove(plyer);
-                db.SaveChanges();
+                Console.WriteLine("First name: " + hazardSummary.FirstName);
+                Console.WriteLine("Last name: " + hazardSummary.LastName);
+
+                Console.WriteLine("Form: " + hazardSummary.Form);
+                Console.WriteLine("Total points: " + hazardSummary.TotalPoints);
+                Console.WriteLine("Influence: " + hazardSummary.Influence);
+                Console.WriteLine("Creativity: " + hazardSummary.Creativity);
+                Console.WriteLine("Threat: " + hazardSummary.Threat);
             }
-            */
         }
     }
 }

@@ -80,6 +80,7 @@
     <Compile Include="FullStats\Saves.cs" />
     <Compile Include="FullStats\Stat.cs" />
     <Compile Include="FullStats\YellowCards.cs" />
+    <Compile Include="SummaryStats\FantasyPremierLeagueInfoSummary.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
