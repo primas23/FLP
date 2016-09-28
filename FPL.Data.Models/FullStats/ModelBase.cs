@@ -8,7 +8,7 @@ namespace FPL.Data.Models.FullStats
     using System.ComponentModel.DataAnnotations.Schema;
 
     /// <summary>
-    /// The Base modle of all the models
+    /// The Base model of all the models
     /// </summary>
     public class ModelBase
     {

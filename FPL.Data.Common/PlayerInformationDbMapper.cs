@@ -21,13 +21,13 @@ namespace FPL.Data.Common
         public static PlayerInformation MapPlayerInformationFromDataBase(PlayerInformation playerInformation, FplContext context)
         {
             // Player Information
-            PlayerInformation dbPlayerInformation = context
+            PlayerInformation dataBasePlayerInformation = context
                 .PlayerInformations
                 .FirstOrDefault(pi => pi.UrlId == playerInformation.UrlId);
 
-            if (dbPlayerInformation != null)
+            if (dataBasePlayerInformation != null)
             {
-                playerInformation.Id = dbPlayerInformation.Id;
+                playerInformation.Id = dataBasePlayerInformation.Id;
             }
 
             // Explain Fixture map
@@ -37,13 +37,13 @@ namespace FPL.Data.Common
                     .Explain[i]
                     .ExplainFixture;
 
-                ExplainFixture dbExplainFixture = context
+                ExplainFixture dataBaseExplainFixture = context
                     .ExplainFixtures
                     .FirstOrDefault(ef => ef.FantasyPremierLeagueId == playerExplainFixture.FantasyPremierLeagueId);
 
-                if (dbExplainFixture != null)
+                if (dataBaseExplainFixture != null)
                 {
-                    playerInformation.Explain[i].ExplainFixture = dbExplainFixture;
+                    playerInformation.Explain[i].ExplainFixture = dataBaseExplainFixture;
                 }
             }
 
@@ -52,13 +52,13 @@ namespace FPL.Data.Common
             {
                 FixturesSummary playerFixturesSummary = playerInformation.FixturesSummary[i];
 
-                FixturesSummary dbFixturesSummary = context
+                FixturesSummary dataBaseFixturesSummary = context
                     .FixturesSummaries
                     .FirstOrDefault(fs => fs.FantasyPremierLeagueId == playerFixturesSummary.FantasyPremierLeagueId);
 
-                if (dbFixturesSummary != null)
+                if (dataBaseFixturesSummary != null)
                 {
-                    playerInformation.FixturesSummary[i] = dbFixturesSummary;
+                    playerInformation.FixturesSummary[i] = dataBaseFixturesSummary;
                 }
             }
 

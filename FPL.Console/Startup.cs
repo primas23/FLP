@@ -19,8 +19,7 @@ namespace FPL.Console
     using FPL.WebCrawler;
 
     using Newtonsoft.Json;
-
-
+    
     /// <summary>
     /// The startup class of the console
     /// </summary>
@@ -31,16 +30,18 @@ namespace FPL.Console
         /// </summary>
         public static void Main()
         {
-            //PlayerInformation information = FantasyPremierLeague.GetPlayerInformation(82);
-            //information.UrlId = 82;
-            //information.FirstName = "Eden";
-            //information.LastName = "Hazard";
+            /*
+            PlayerInformation information = FantasyPremierLeague.GetPlayerInformation(82);
+            information.UrlId = 82;
+            information.FirstName = "Eden";
+            information.LastName = "Hazard";
 
-            //using (var db = new FplContext())
-            //{
-            //    db.PlayerInformations.Add(information);
-            //    db.SaveChanges();
-            //}
+            using (var db = new FplContext())
+            {
+                db.PlayerInformations.Add(information);
+                db.SaveChanges();
+            }
+            */
 
             List<PlayerInformation> informations = new List<PlayerInformation>();
 
@@ -68,23 +69,23 @@ namespace FPL.Console
 
             Console.WriteLine("Done");
 
-            //using (var db = new FplContext())
-            //{
-            //    PlayerInformation information = FantasyPremierLeague.GetPlayerInformation(4);
-            //    var eden = db.PlayerInformations
-            //        .FirstOrDefault(p => p.Id == 4);
-            //    System.Console.WriteLine();
+            /*
+            using (var db = new FplContext())
+            {
+                PlayerInformation information = FantasyPremierLeague.GetPlayerInformation(4);
+                var eden = db.PlayerInformations
+                    .FirstOrDefault(p => p.Id == 4);
+                System.Console.WriteLine();
 
-            //}
+            }
 
-            //using (var db = new FplContext())
-            //{
-            //    var plyer = db.PlayerInformations.FirstOrDefault(p => p.Id == 1);
-            //    db.PlayerInformations.Remove(plyer);
-            //    db.SaveChanges();
-            //}
-
-
+            using (var db = new FplContext())
+            {
+                var plyer = db.PlayerInformations.FirstOrDefault(p => p.Id == 1);
+                db.PlayerInformations.Remove(plyer);
+                db.SaveChanges();
+            }
+            */
         }
     }
 }

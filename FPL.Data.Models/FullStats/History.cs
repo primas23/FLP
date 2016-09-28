@@ -293,10 +293,10 @@ namespace FPL.Data.Models.FullStats
         public string Threat { get; set; }
 
         /// <summary>
-        /// Gets or sets the index of the ict.
+        /// Gets or sets the index of the Influence, Creativity and Threat.
         /// </summary>
         /// <value>
-        /// The index of the ict.
+        /// The index of the Influence, Creativity and Threat.
         /// </value>
         [JsonProperty("ict_index")]
         public string IctIndex { get; set; }

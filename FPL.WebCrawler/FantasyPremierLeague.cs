@@ -6,13 +6,11 @@ namespace FPL.WebCrawler
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Linq;
     using System.Net;
     using System.Text.RegularExpressions;
     
     using Newtonsoft.Json;
 
-    using Data;
     using Data.Models.FullStats;
 
     /// <summary>
@@ -23,7 +21,7 @@ namespace FPL.WebCrawler
         /// <summary>
         /// The simple elements to replace
         /// </summary>
-        private static readonly IDictionary<string, string> _simpleElementsToReplace = new Dictionary<string, string>
+        private static readonly IDictionary<string, string> SimpleElementsToReplace = new Dictionary<string, string>
         {
             { Environment.NewLine, string.Empty },
             { "team_h_score", "team_home_score" },
@@ -68,7 +66,7 @@ namespace FPL.WebCrawler
         }
 
         /// <summary>
-        /// Replaces the fixture with cooresponding pattern.
+        /// Replaces the fixture with corresponding pattern.
         /// </summary>
         /// <param name="json">The json.</param>
         /// <param name="pattern">The pattern.</param>
@@ -100,7 +98,7 @@ namespace FPL.WebCrawler
         /// <returns>The json with the replaced value.</returns>
         private static string JsonReplaceSimpleNames(string json)
         {
-            foreach (KeyValuePair<string, string> pair in _simpleElementsToReplace)
+            foreach (KeyValuePair<string, string> pair in SimpleElementsToReplace)
             {
                 json = json.Replace(pair.Key, pair.Value);
             }
