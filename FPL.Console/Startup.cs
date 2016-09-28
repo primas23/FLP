@@ -1,9 +1,6 @@
 ﻿// <copyright file="Startup.cs" company="Primas">
 //     Company copyright tag.
 // </copyright>
-
-using FPL.Data.Models.SummaryStats;
-
 namespace FPL.Console
 {
     using System;
@@ -15,13 +12,14 @@ namespace FPL.Console
     using System.Net;
     using System.Text.RegularExpressions;
 
+    using Newtonsoft.Json;
+
     using FPL.Data;
-    using FPL.Data.Utilities;
     using FPL.Data.Models;
     using FPL.Data.Models.FullStats;
+    using FPL.Data.Models.SummaryStats;
+    using FPL.Data.Utilities;
     using FPL.WebCrawler;
-
-    using Newtonsoft.Json;
     
     /// <summary>
     /// The startup class of the console
