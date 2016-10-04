@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPL.Data.Common", "FPL.Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPL.Data.Utilities", "FPL.Data.Utilities\FPL.Data.Utilities.csproj", "{747F84D1-B972-4998-8603-E2CCDDE3979D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPL.Tests", "FPL.Tests\FPL.Tests.csproj", "{F44D227B-A595-4F6D-9056-81C9E950A41C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{747F84D1-B972-4998-8603-E2CCDDE3979D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{747F84D1-B972-4998-8603-E2CCDDE3979D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{747F84D1-B972-4998-8603-E2CCDDE3979D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F44D227B-A595-4F6D-9056-81C9E950A41C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F44D227B-A595-4F6D-9056-81C9E950A41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F44D227B-A595-4F6D-9056-81C9E950A41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F44D227B-A595-4F6D-9056-81C9E950A41C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

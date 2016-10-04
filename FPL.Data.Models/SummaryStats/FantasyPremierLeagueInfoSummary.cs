@@ -48,8 +48,14 @@ namespace FPL.Data.Models.SummaryStats
         /// Initializes a new instance of the <see cref="FantasyPremierLeagueInfoSummary"/> class.
         /// </summary>
         /// <param name="playerInformation">The player information.</param>
+        /// <exception cref="System.ArgumentNullException">The playerInformation shold not be null!</exception>
         public FantasyPremierLeagueInfoSummary(PlayerInformation playerInformation)
         {
+            if (playerInformation == null)
+            {
+                throw new ArgumentNullException("The playerInformation shold not be null!");
+            }
+
             this._playerInformation = playerInformation;
         }
 
