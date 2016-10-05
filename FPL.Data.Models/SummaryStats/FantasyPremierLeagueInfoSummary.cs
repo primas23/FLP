@@ -45,15 +45,35 @@ namespace FPL.Data.Models.SummaryStats
         private double _thread = 0;
 
         /// <summary>
+        /// The first name
+        /// </summary>
+        private string _firstName = string.Empty;
+
+        /// <summary>
+        /// The last name
+        /// </summary>
+        private string _lastName = string.Empty;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="FantasyPremierLeagueInfoSummary"/> class.
         /// </summary>
         /// <param name="playerInformation">The player information.</param>
         /// <exception cref="System.ArgumentNullException">The playerInformation shold not be null!</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">The total points should not exceed int.MaxValue</exception>
         public FantasyPremierLeagueInfoSummary(PlayerInformation playerInformation)
         {
             if (playerInformation == null)
             {
                 throw new ArgumentNullException("The playerInformation shold not be null!");
+            }
+
+            IEnumerable<int> totalPointsList = playerInformation.History.Select(h => h.TotalPoints);
+
+
+            int totalPoints = playerInformation.History.Sum(h => h.TotalPoints);
+            if (totalPoints > int.MaxValue)
+            {
+                throw new ArgumentOutOfRangeException("The total points should not exceed int.MaxValue");
             }
 
             this._playerInformation = playerInformation;
@@ -69,7 +89,12 @@ namespace FPL.Data.Models.SummaryStats
         {
             get
             {
-                return this._playerInformation.FirstName;
+                if (string.IsNullOrWhiteSpace(this._firstName) && !string.IsNullOrWhiteSpace(this._playerInformation.FirstName))
+                {
+                    this._firstName = this._playerInformation.FirstName;
+                }
+
+                return this._firstName;
             }
         }
 
@@ -83,7 +108,12 @@ namespace FPL.Data.Models.SummaryStats
         {
             get
             {
-                return this._playerInformation.LastName;
+                if (string.IsNullOrWhiteSpace(this._lastName) && !string.IsNullOrWhiteSpace(this._playerInformation.LastName))
+                {
+                    this._lastName = this._playerInformation.LastName;
+                }
+
+                return this._lastName;
             }
         }
 
