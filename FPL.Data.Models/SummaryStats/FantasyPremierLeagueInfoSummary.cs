@@ -108,7 +108,10 @@ namespace FPL.Data.Models.SummaryStats
                         .Select(h => h.TotalPoints)
                         .Sum();
 
-                    this._form = sum / allMatches.Count;
+                    if (sum > 0)
+                    {
+                        this._form = sum / allMatches.Count;
+                    }
                 }
 
                 return this._form;
