@@ -42,7 +42,7 @@ namespace FPL.Data.Utilities
             playerInformation.FixturesSummary = MapEntities(playerInformation.FixturesSummary, context);
 
             // History map
-            playerInformation.History = MapEntities(playerInformation.History, context);
+            playerInformation.Histories = MapEntities(playerInformation.Histories, context);
 
             // History Summarry map
             playerInformation.HistorySummary = MapEntities(playerInformation.HistorySummary, context);

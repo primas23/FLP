@@ -59,7 +59,6 @@ namespace FPL.Data.Models.SummaryStats
         /// </summary>
         /// <param name="playerInformation">The player information.</param>
         /// <exception cref="System.ArgumentNullException">The playerInformation shold not be null!</exception>
-        /// <exception cref="System.ArgumentOutOfRangeException">The total points should not exceed int.MaxValue</exception>
         public FantasyPremierLeagueInfoSummary(PlayerInformation playerInformation)
         {
             if (playerInformation == null)
@@ -67,13 +66,17 @@ namespace FPL.Data.Models.SummaryStats
                 throw new ArgumentNullException("The playerInformation shold not be null!");
             }
 
-            IEnumerable<int> totalPointsList = playerInformation.History.Select(h => h.TotalPoints);
-
-
-            int totalPoints = playerInformation.History.Sum(h => h.TotalPoints);
-            if (totalPoints > int.MaxValue)
+            if (playerInformation.Histories != null)
             {
-                throw new ArgumentOutOfRangeException("The total points should not exceed int.MaxValue");
+                IEnumerable<int> totalPointsList = playerInformation
+                    .Histories
+                    .Where(h => h != null)
+                    .Select(h => h.TotalPoints);
+
+                if (this.IsOverflowing(totalPointsList, int.MaxValue))
+                {
+                    throw new ArgumentOutOfRangeException("The total points should not exceed 2,147,483,647");
+                }
             }
 
             this._playerInformation = playerInformation;
@@ -130,7 +133,7 @@ namespace FPL.Data.Models.SummaryStats
                 if (Math.Abs(this._form) < 0.001)
                 {
                     List<History> allMatches = this._playerInformation
-                    .History
+                    .Histories
                     .Where(h => h.KickoffTime > DateTime.Now.AddMonths(-1))
                     .ToList();
 
@@ -158,10 +161,11 @@ namespace FPL.Data.Models.SummaryStats
         {
             get
             {
-                if (this._totalPoints == 0)
+                if ((this._totalPoints == 0) && (this._playerInformation.Histories != null))
                 {
                     IEnumerable<int> historyPoints = this._playerInformation
-                    .History
+                    .Histories
+                    .Where(h => h != null)
                     .Select(h => h.TotalPoints);
 
                     this._totalPoints = historyPoints.Sum();
@@ -181,14 +185,21 @@ namespace FPL.Data.Models.SummaryStats
         {
             get
             {
-                if (Math.Abs(this._influence) < 0.001)
+                if ((Math.Abs(this._influence) < 0.001) && (this._playerInformation.Histories != null))
                 {
                     List<string> influenceStrings = this._playerInformation
-                    .History
+                    .Histories
+                    .Where(h => h != null)
+                    .Where(h => h.Influence != null)
                     .Select(h => h.Influence)
                     .ToList();
 
-                    this._influence = GetsDoubleSumFromStringCollection(influenceStrings) / influenceStrings.Count;
+                    double influenceSum = this.GetsDoubleSumFromStringCollection(influenceStrings);
+
+                    if (influenceSum > 0)
+                    {
+                        this._influence = influenceSum / influenceStrings.Count;
+                    }
                 }
 
                 return this._influence;
@@ -205,14 +216,21 @@ namespace FPL.Data.Models.SummaryStats
         {
             get
             {
-                if (Math.Abs(this._creativity) < 0.001)
+                if ((Math.Abs(this._creativity) < 0.001) && (this._playerInformation.Histories != null))
                 {
                     List<string> creativityStrings = this._playerInformation
-                    .History
+                    .Histories
+                    .Where(h => h != null)
+                    .Where(h => h.Creativity != null)
                     .Select(h => h.Creativity)
                     .ToList();
 
-                    this._creativity = GetsDoubleSumFromStringCollection(creativityStrings) / creativityStrings.Count;
+                    double creativitySum = this.GetsDoubleSumFromStringCollection(creativityStrings);
+
+                    if (creativitySum > 0)
+                    {
+                        this._creativity = creativitySum / creativityStrings.Count;
+                    }
                 }
 
                 return this._creativity;
@@ -229,14 +247,21 @@ namespace FPL.Data.Models.SummaryStats
         {
             get
             {
-                if (Math.Abs(this._thread) < 0.001)
+                if ((Math.Abs(this._thread) < 0.001) && (this._playerInformation.Histories != null))
                 {
                     List<string> threadStrings = this._playerInformation
-                    .History
+                    .Histories
+                     .Where(h => h != null)
+                    .Where(h => h.Threat != null)
                     .Select(h => h.Threat)
                     .ToList();
 
-                    this._thread = GetsDoubleSumFromStringCollection(threadStrings) / threadStrings.Count;
+                    double threadSum = this.GetsDoubleSumFromStringCollection(threadStrings);
+
+                    if (threadSum > 0)
+                    {
+                        this._thread = threadSum / threadStrings.Count;
+                    }
                 }
 
                 return this._thread;
@@ -268,6 +293,31 @@ namespace FPL.Data.Models.SummaryStats
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Determines whether the specified enumeration is overflowing the limit.
+        /// </summary>
+        /// <param name="enumeration">The enumeration.</param>
+        /// <param name="maxValue">The maximum value limit.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified enumeration is overflowing; otherwise, <c>false</c>.
+        /// </returns>
+        private bool IsOverflowing(IEnumerable<int> enumeration, long maxValue)
+        {
+            long sum = 0;
+
+            foreach (int num in enumeration)
+            {
+                if ((maxValue - sum) < num)
+                {
+                    return true;
+                }
+
+                sum += num;
+            }
+
+            return false;
         }
     }
 }

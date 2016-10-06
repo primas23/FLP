@@ -22,7 +22,7 @@ namespace FPL.Data.Models.FullStats
             this.Explain = new List<Explain>();
             this.HistorySummary = new List<HistorySummary>();
             this.Fixtures = new List<Fixture>();
-            this.History = new List<History>();
+            this.Histories = new List<History>();
         }
 
         /// <summary>
@@ -101,6 +101,6 @@ namespace FPL.Data.Models.FullStats
         /// The history.
         /// </value>
         [JsonProperty("history")]
-        public virtual IList<History> History { get; set; }
+        public virtual IList<History> Histories { get; set; }
     }
 }
