@@ -3,6 +3,8 @@
 // </copyright>
 namespace FPL.Data.Models.FullStats
 {
+    using FPL.Data.Common.Contracts;
+    
     /// <summary>
     /// Extension of the Model base class with the PlayerInformation properties
     /// </summary>
@@ -23,6 +25,6 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The player information.
         /// </value>
-        public virtual PlayerInformation PlayerInformation { get; set; }
+        public virtual IPlayerInformation PlayerInformation { get; set; }
     }
 }

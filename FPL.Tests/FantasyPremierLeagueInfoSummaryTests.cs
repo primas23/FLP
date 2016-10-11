@@ -1,6 +1,8 @@
 ﻿// <copyright file="FantasyPremierLeagueInfoSummaryTests.cs" company="Primas">
 //     Company copyright tag.
 // </copyright>
+
+
 namespace FPL.Tests
 {
     using System;
@@ -11,7 +13,8 @@ namespace FPL.Tests
 
     using FPL.Data.Models.FullStats;
     using FPL.Data.Models.SummaryStats;
-
+    using FPL.Data.Common.Contracts;
+    
     /// <summary>
     /// Tests for FantasyPremierLeagueInfoSummary class
     /// </summary>
@@ -35,9 +38,9 @@ namespace FPL.Tests
         [TestMethod]
         public void Class_ShouldThrowException_WhenTotalPointsSumIsBiggerThatIntMax()
         {
-            PlayerInformation playerInformation = new PlayerInformation
+            IPlayerInformation playerInformation = new PlayerInformation
             {
-                Histories = new List<History>()
+                Histories = new List<IHistory>()
                 {
                     new History()
                     {
@@ -189,7 +192,7 @@ namespace FPL.Tests
         [TestMethod]
         public void Form_ShouldReturnZero_WhenListOfHistoryIsEmpty()
         {
-            PlayerInformation playerInformation = new PlayerInformation() { Histories = new List<History>() };
+            PlayerInformation playerInformation = new PlayerInformation() { Histories = new List<IHistory>() };
 
             FantasyPremierLeagueInfoSummary summery = new FantasyPremierLeagueInfoSummary(playerInformation);
 
@@ -202,7 +205,7 @@ namespace FPL.Tests
         [TestMethod]
         public void Form_ShouldReturnZero_WhenListOfHistoryIsFilledWithNegativeTotalPoints()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { KickoffTime = DateTime.Today, TotalPoints = -1 },
                 new History() { KickoffTime = DateTime.Today, TotalPoints = -1 },
@@ -222,7 +225,7 @@ namespace FPL.Tests
         [TestMethod]
         public void Form_ShouldReturnCorrectNumber_WhenListOfHistoryIsCorrect()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { KickoffTime = DateTime.Today, TotalPoints = 1 },
                 new History() { KickoffTime = DateTime.Today, TotalPoints = 1 },
@@ -246,7 +249,7 @@ namespace FPL.Tests
         [TestMethod]
         public void TotalPoints_ShouldReturnCorrectNumber_WhenListOfHistoryPointsIsCorrect()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { TotalPoints = 1 },
                 new History() { TotalPoints = 1 },
@@ -266,7 +269,7 @@ namespace FPL.Tests
         [TestMethod]
         public void TotalPoints_ShouldReturnCorrectNumber_WhenListOfHistoryPointsIsCorrectAndOneIsNull()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { TotalPoints = 1 },
                 new History() { TotalPoints = 1 },
@@ -286,7 +289,7 @@ namespace FPL.Tests
         [TestMethod]
         public void TotalPoints_ShouldReturnZero_WhenListOfHistoryPointsAreZero()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { TotalPoints = 0 },
                 new History() { TotalPoints = 0 },
@@ -319,7 +322,7 @@ namespace FPL.Tests
         [TestMethod]
         public void TotalPoints_ShouldReturnZero_WhenNoHistoryIsProvided()
         {
-            PlayerInformation playerInformation = new PlayerInformation() { Histories = new List<History>() };
+            PlayerInformation playerInformation = new PlayerInformation() { Histories = new List<IHistory>() };
 
             FantasyPremierLeagueInfoSummary summery = new FantasyPremierLeagueInfoSummary(playerInformation);
 
@@ -336,7 +339,7 @@ namespace FPL.Tests
         [TestMethod]
         public void Influence_ShouldReturnCorrectNumber_WhenListOfHistoryInfluenceIsCorrect()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { Influence = "2" },
                 new History() { Influence = "2" },
@@ -382,7 +385,7 @@ namespace FPL.Tests
         [TestMethod]
         public void Influence_ShouldReturnCorrectNumber_WhenListOfHistoryInfluenceIsCorrectAndOneIsNull()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { Influence = "1" },
                 new History() { Influence = "1" },
@@ -402,7 +405,7 @@ namespace FPL.Tests
         [TestMethod]
         public void Influence_ShouldReturnZeor_WhenListOfHistoryInfluenceAreZero()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { Influence = "0" },
                 new History() { Influence = "0" }
@@ -421,7 +424,7 @@ namespace FPL.Tests
         [TestMethod]
         public void Influence_ShouldReturnCorrectNumber_WhenListOfHistoryInfluenceAreCorrectAndOneIsNull()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { Influence = "0" },
                 new History() { Influence = "0" },
@@ -445,7 +448,7 @@ namespace FPL.Tests
         [TestMethod]
         public void Creativity_ShouldReturnZero_WhenListOfHistoryCreativityAreZero()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { Creativity = "0" },
                 new History() { Creativity = "0" }
@@ -464,7 +467,7 @@ namespace FPL.Tests
         [TestMethod]
         public void Creativity_ShouldReturnCorrectNumber_WhenListOfHistoryCreativityAreCorrect()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { Creativity = "2" },
                 new History() { Creativity = "2" }
@@ -483,7 +486,7 @@ namespace FPL.Tests
         [TestMethod]
         public void Creativity_ShouldReturnCorrectNumber_WhenListOfHistoryCreativityAreCorrectAndOneIsNull()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { Creativity = "2" },
                 new History() { Creativity = "2" },
@@ -503,7 +506,7 @@ namespace FPL.Tests
         [TestMethod]
         public void Creativity_ShouldReturnCorrectNumber_WhenListOfHistoryCreativityAreCorrectAndOneHistoryIsNull()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { Creativity = "2" },
                 new History() { Creativity = "2" },
@@ -553,7 +556,7 @@ namespace FPL.Tests
         [TestMethod]
         public void Threat_ShouldReturnZero_WhenListOfHistoryThreatsAreZero()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { Threat = "0" },
                 new History() { Threat = "0" }
@@ -572,7 +575,7 @@ namespace FPL.Tests
         [TestMethod]
         public void Threat_ShouldReturnCorrectNumber_WhenListOfHistoryThreatsAreCorrect()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { Threat = "2" },
                 new History() { Threat = "2" }
@@ -591,7 +594,7 @@ namespace FPL.Tests
         [TestMethod]
         public void Threat_ShouldReturnCorrectNumber_WhenListOfHistoryThreatsAreCorrectAndOneIsNull()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { Threat = "2" },
                 new History() { Threat = "2" },
@@ -611,7 +614,7 @@ namespace FPL.Tests
         [TestMethod]
         public void Threat_ShouldReturnCorrectNumber_WhenListOfHistoryThreatsAreCorrectAndOneHistoryIsNull()
         {
-            List<History> histories = new List<History>()
+            List<IHistory> histories = new List<IHistory>()
             {
                 new History() { Threat = "2" },
                 new History() { Threat = "2" },

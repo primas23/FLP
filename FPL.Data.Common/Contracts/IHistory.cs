@@ -1,36 +1,19 @@
-﻿// <copyright file="History.cs" company="Primas">
+﻿// <copyright file="IHistory.cs" company="Primas">
 //     Company copyright tag.
 // </copyright>
-namespace FPL.Data.Models.FullStats
+namespace FPL.Data.Common.Contracts
 {
     using System;
 
-    using Newtonsoft.Json;
-
-    using FPL.Data.Common.Contracts;
-
-    /// <summary>
-    /// The History class
-    /// </summary>
-    public class History : FullStatsBase,  IHistory
+    public interface IHistory : IFantasyPremierLeagueId
     {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        [JsonProperty("id")]
-        public int FantasyPremierLeagueId { get; set; }
-
         /// <summary>
         /// Gets or sets the kickoff time.
         /// </summary>
         /// <value>
         /// The kickoff time.
         /// </value>
-        [JsonProperty("kickoff_time")]
-        public DateTime KickoffTime { get; set; }
+        DateTime KickoffTime { get; set; }
 
         /// <summary>
         /// Gets or sets the kickoff time formatted.
@@ -38,8 +21,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The kickoff time formatted.
         /// </value>
-        [JsonProperty("kickoff_time_formatted")]
-        public string KickoffTimeFormatted { get; set; }
+        string KickoffTimeFormatted { get; set; }
 
         /// <summary>
         /// Gets or sets the team home score.
@@ -47,8 +29,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The team home score.
         /// </value>
-        [JsonProperty("team_home_score")]
-        public int TeamHomeScore { get; set; }
+        int TeamHomeScore { get; set; }
 
         /// <summary>
         /// Gets or sets the team away score.
@@ -56,8 +37,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The team away score.
         /// </value>
-        [JsonProperty("team_away_score")]
-        public int TeamAwayScore { get; set; }
+        int TeamAwayScore { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether [was home].
@@ -65,8 +45,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         ///   <c>true</c> if [was home]; otherwise, <c>false</c>.
         /// </value>
-        [JsonProperty("was_home")]
-        public bool WasHome { get; set; }
+        bool WasHome { get; set; }
 
         /// <summary>
         /// Gets or sets the round.
@@ -74,8 +53,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The round.
         /// </value>
-        [JsonProperty("round")]
-        public int Round { get; set; }
+        int Round { get; set; }
 
         /// <summary>
         /// Gets or sets the total points.
@@ -83,8 +61,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The total points.
         /// </value>
-        [JsonProperty("total_points")]
-        public int TotalPoints { get; set; }
+        int TotalPoints { get; set; }
 
         /// <summary>
         /// Gets or sets the value.
@@ -92,8 +69,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The value.
         /// </value>
-        [JsonProperty("value")]
-        public int Value { get; set; }
+        int Value { get; set; }
 
         /// <summary>
         /// Gets or sets the transfers balance.
@@ -101,8 +77,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The transfers balance.
         /// </value>
-        [JsonProperty("transfers_balance")]
-        public int TransfersBalance { get; set; }
+        int TransfersBalance { get; set; }
 
         /// <summary>
         /// Gets or sets the selected.
@@ -110,8 +85,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The selected.
         /// </value>
-        [JsonProperty("selected")]
-        public int Selected { get; set; }
+        int Selected { get; set; }
 
         /// <summary>
         /// Gets or sets the transfers in.
@@ -119,8 +93,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The transfers in.
         /// </value>
-        [JsonProperty("transfers_in")]
-        public int TransfersIn { get; set; }
+        int TransfersIn { get; set; }
 
         /// <summary>
         /// Gets or sets the transfers out.
@@ -128,8 +101,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The transfers out.
         /// </value>
-        [JsonProperty("transfers_out")]
-        public int TransfersOut { get; set; }
+        int TransfersOut { get; set; }
 
         /// <summary>
         /// Gets or sets the loaned in.
@@ -137,8 +109,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The loaned in.
         /// </value>
-        [JsonProperty("loaned_in")]
-        public int LoanedIn { get; set; }
+        int LoanedIn { get; set; }
 
         /// <summary>
         /// Gets or sets the loaned out.
@@ -146,8 +117,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The loaned out.
         /// </value>
-        [JsonProperty("loaned_out")]
-        public int LoanedOut { get; set; }
+        int LoanedOut { get; set; }
 
         /// <summary>
         /// Gets or sets the minutes.
@@ -155,8 +125,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The minutes.
         /// </value>
-        [JsonProperty("minutes")]
-        public int Minutes { get; set; }
+        int Minutes { get; set; }
 
         /// <summary>
         /// Gets or sets the goals scored.
@@ -164,8 +133,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The goals scored.
         /// </value>
-        [JsonProperty("goals_scored")]
-        public int GoalsScored { get; set; }
+        int GoalsScored { get; set; }
 
         /// <summary>
         /// Gets or sets the assists.
@@ -173,8 +141,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The assists.
         /// </value>
-        [JsonProperty("assists")]
-        public int Assists { get; set; }
+        int Assists { get; set; }
 
         /// <summary>
         /// Gets or sets the clean sheets.
@@ -182,8 +149,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The clean sheets.
         /// </value>
-        [JsonProperty("clean_sheets")]
-        public int CleanSheets { get; set; }
+        int CleanSheets { get; set; }
 
         /// <summary>
         /// Gets or sets the goals conceded.
@@ -191,8 +157,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The goals conceded.
         /// </value>
-        [JsonProperty("goals_conceded")]
-        public int GoalsConceded { get; set; }
+        int GoalsConceded { get; set; }
 
         /// <summary>
         /// Gets or sets the own goals.
@@ -200,8 +165,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The own goals.
         /// </value>
-        [JsonProperty("own_goals")]
-        public int OwnGoals { get; set; }
+        int OwnGoals { get; set; }
 
         /// <summary>
         /// Gets or sets the penalties saved.
@@ -209,8 +173,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The penalties saved.
         /// </value>
-        [JsonProperty("penalties_saved")]
-        public int PenaltiesSaved { get; set; }
+        int PenaltiesSaved { get; set; }
 
         /// <summary>
         /// Gets or sets the penalties missed.
@@ -218,8 +181,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The penalties missed.
         /// </value>
-        [JsonProperty("penalties_missed")]
-        public int PenaltiesMissed { get; set; }
+        int PenaltiesMissed { get; set; }
 
         /// <summary>
         /// Gets or sets the yellow cards.
@@ -227,8 +189,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The yellow cards.
         /// </value>
-        [JsonProperty("yellow_cards")]
-        public int YellowCards { get; set; }
+        int YellowCards { get; set; }
 
         /// <summary>
         /// Gets or sets the red cards.
@@ -236,8 +197,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The red cards.
         /// </value>
-        [JsonProperty("red_cards")]
-        public int RedCards { get; set; }
+        int RedCards { get; set; }
 
         /// <summary>
         /// Gets or sets the saves.
@@ -245,8 +205,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The saves.
         /// </value>
-        [JsonProperty("saves")]
-        public int Saves { get; set; }
+        int Saves { get; set; }
 
         /// <summary>
         /// Gets or sets the bonus.
@@ -254,8 +213,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The bonus.
         /// </value>
-        [JsonProperty("bonus")]
-        public int Bonus { get; set; }
+        int Bonus { get; set; }
 
         /// <summary>
         /// Gets or sets the BPS.
@@ -263,8 +221,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The BPS.
         /// </value>
-        [JsonProperty("bps")]
-        public int Bps { get; set; }
+        int Bps { get; set; }
 
         /// <summary>
         /// Gets or sets the influence.
@@ -272,8 +229,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The influence.
         /// </value>
-        [JsonProperty("influence")]
-        public string Influence { get; set; }
+        string Influence { get; set; }
 
         /// <summary>
         /// Gets or sets the creativity.
@@ -281,8 +237,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The creativity.
         /// </value>
-        [JsonProperty("creativity")]
-        public string Creativity { get; set; }
+        string Creativity { get; set; }
 
         /// <summary>
         /// Gets or sets the threat.
@@ -290,8 +245,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The threat.
         /// </value>
-        [JsonProperty("threat")]
-        public string Threat { get; set; }
+        string Threat { get; set; }
 
         /// <summary>
         /// Gets or sets the index of the Influence, Creativity and Threat.
@@ -299,8 +253,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The index of the Influence, Creativity and Threat.
         /// </value>
-        [JsonProperty("ict_index")]
-        public string IctIndex { get; set; }
+        string IctIndex { get; set; }
 
         /// <summary>
         /// Gets or sets the index of the Electronics Arts.
@@ -308,8 +261,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The index of the Electronics Arts.
         /// </value>
-        [JsonProperty("ea_index")]
-        public int EaIndex { get; set; }
+        int EaIndex { get; set; }
 
         /// <summary>
         /// Gets or sets the open play crosses.
@@ -317,8 +269,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The open play crosses.
         /// </value>
-        [JsonProperty("open_play_crosses")]
-        public int OpenPlayCrosses { get; set; }
+        int OpenPlayCrosses { get; set; }
 
         /// <summary>
         /// Gets or sets the big chances created.
@@ -326,8 +277,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The big chances created.
         /// </value>
-        [JsonProperty("big_chances_created")]
-        public int BigChancesCreated { get; set; }
+        int BigChancesCreated { get; set; }
 
         /// <summary>
         /// Gets or sets the clearances blocks interceptions.
@@ -335,8 +285,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The clearances blocks interceptions.
         /// </value>
-        [JsonProperty("clearances_blocks_interceptions")]
-        public int ClearancesBlocksInterceptions { get; set; }
+        int ClearancesBlocksInterceptions { get; set; }
 
         /// <summary>
         /// Gets or sets the recoveries.
@@ -344,8 +293,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The recoveries.
         /// </value>
-        [JsonProperty("recoveries")]
-        public int Recoveries { get; set; }
+        int Recoveries { get; set; }
 
         /// <summary>
         /// Gets or sets the key passes.
@@ -353,8 +301,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The key passes.
         /// </value>
-        [JsonProperty("key_passes")]
-        public int KeyPasses { get; set; }
+        int KeyPasses { get; set; }
 
         /// <summary>
         /// Gets or sets the tackles.
@@ -362,8 +309,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The tackles.
         /// </value>
-        [JsonProperty("tackles")]
-        public int Tackles { get; set; }
+        int Tackles { get; set; }
 
         /// <summary>
         /// Gets or sets the winning goals.
@@ -371,8 +317,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The winning goals.
         /// </value>
-        [JsonProperty("winning_goals")]
-        public int WinningGoals { get; set; }
+        int WinningGoals { get; set; }
 
         /// <summary>
         /// Gets or sets the attempted passes.
@@ -380,8 +325,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The attempted passes.
         /// </value>
-        [JsonProperty("attempted_passes")]
-        public int AttemptedPasses { get; set; }
+        int AttemptedPasses { get; set; }
 
         /// <summary>
         /// Gets or sets the completed passes.
@@ -389,8 +333,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The completed passes.
         /// </value>
-        [JsonProperty("completed_passes")]
-        public int CompletedPasses { get; set; }
+        int CompletedPasses { get; set; }
 
         /// <summary>
         /// Gets or sets the penalties conceded.
@@ -398,8 +341,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The penalties conceded.
         /// </value>
-        [JsonProperty("penalties_conceded")]
-        public int PenaltiesConceded { get; set; }
+        int PenaltiesConceded { get; set; }
 
         /// <summary>
         /// Gets or sets the big chances missed.
@@ -407,8 +349,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The big chances missed.
         /// </value>
-        [JsonProperty("big_chances_missed")]
-        public int BigChancesMissed { get; set; }
+        int BigChancesMissed { get; set; }
 
         /// <summary>
         /// Gets or sets the errors leading to goal.
@@ -416,8 +357,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The errors leading to goal.
         /// </value>
-        [JsonProperty("errors_leading_to_goal")]
-        public int ErrorsLeadingToGoal { get; set; }
+        int ErrorsLeadingToGoal { get; set; }
 
         /// <summary>
         /// Gets or sets the errors leading to goal attempt.
@@ -425,8 +365,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The errors leading to goal attempt.
         /// </value>
-        [JsonProperty("errors_leading_to_goal_attempt")]
-        public int ErrorsLeadingToGoalAttempt { get; set; }
+        int ErrorsLeadingToGoalAttempt { get; set; }
 
         /// <summary>
         /// Gets or sets the tackled.
@@ -434,8 +373,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The tackled.
         /// </value>
-        [JsonProperty("tackled")]
-        public int Tackled { get; set; }
+        int Tackled { get; set; }
 
         /// <summary>
         /// Gets or sets the offside.
@@ -443,8 +381,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The offside.
         /// </value>
-        [JsonProperty("offside")]
-        public int Offside { get; set; }
+        int Offside { get; set; }
 
         /// <summary>
         /// Gets or sets the target missed.
@@ -452,8 +389,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The target missed.
         /// </value>
-        [JsonProperty("target_missed")]
-        public int TargetMissed { get; set; }
+        int TargetMissed { get; set; }
 
         /// <summary>
         /// Gets or sets the fouls.
@@ -461,8 +397,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The fouls.
         /// </value>
-        [JsonProperty("fouls")]
-        public int Fouls { get; set; }
+        int Fouls { get; set; }
 
         /// <summary>
         /// Gets or sets the dribbles.
@@ -470,8 +405,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The dribbles.
         /// </value>
-        [JsonProperty("dribbles")]
-        public int Dribbles { get; set; }
+        int Dribbles { get; set; }
 
         /// <summary>
         /// Gets or sets the element.
@@ -479,8 +413,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The element.
         /// </value>
-        [JsonProperty("element")]
-        public int Element { get; set; }
+        int Element { get; set; }
 
         /// <summary>
         /// Gets or sets the fixture.
@@ -488,8 +421,7 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The fixture.
         /// </value>
-        [JsonProperty("fixture")]
-        public int Fixture { get; set; }
+        int Fixture { get; set; }
 
         /// <summary>
         /// Gets or sets the opponent team.
@@ -497,7 +429,46 @@ namespace FPL.Data.Models.FullStats
         /// <value>
         /// The opponent team.
         /// </value>
-        [JsonProperty("opponent_team")]
-        public int OpponentTeam { get; set; }
+        int OpponentTeam { get; set; }
+
+        /// <summary>
+        /// Gets or sets the player information identifier.
+        /// </summary>
+        /// <value>
+        /// The player information identifier.
+        /// </value>
+        int PlayerInformationId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the player information.
+        /// </summary>
+        /// <value>
+        /// The player information.
+        /// </value>
+        IPlayerInformation PlayerInformation { get; set; }
+
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
+        int Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the created on date.
+        /// </summary>
+        /// <value>
+        /// The created on date.
+        /// </value>
+        DateTime CreatedOn { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
+        bool IsDeleted { get; set; }
     }
 }

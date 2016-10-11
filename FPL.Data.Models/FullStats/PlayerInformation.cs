@@ -7,10 +7,12 @@ namespace FPL.Data.Models.FullStats
 
     using Newtonsoft.Json;
 
+    using FPL.Data.Common.Contracts;
+    
     /// <summary>
     /// All the player information form the Fantasy Premier League
     /// </summary>
-    public class PlayerInformation : ModelBase
+    public class PlayerInformation : ModelBase, IPlayerInformation
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PlayerInformation"/> class.
@@ -22,7 +24,7 @@ namespace FPL.Data.Models.FullStats
             this.Explain = new List<Explain>();
             this.HistorySummary = new List<HistorySummary>();
             this.Fixtures = new List<Fixture>();
-            this.Histories = new List<History>();
+            this.Histories = new List<IHistory>();
         }
 
         /// <summary>
@@ -101,6 +103,6 @@ namespace FPL.Data.Models.FullStats
         /// The history.
         /// </value>
         [JsonProperty("history")]
-        public virtual IList<History> Histories { get; set; }
+        public virtual IList<IHistory> Histories { get; set; }
     }
 }

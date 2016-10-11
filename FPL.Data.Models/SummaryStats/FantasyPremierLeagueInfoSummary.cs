@@ -7,7 +7,7 @@ namespace FPL.Data.Models.SummaryStats
     using System.Collections.Generic;
     using System.Linq;
 
-    using FPL.Data.Models.FullStats;
+    using FPL.Data.Common.Contracts;
 
     /// <summary>
     /// The Fantasy Premier League Information Summary
@@ -17,7 +17,7 @@ namespace FPL.Data.Models.SummaryStats
         /// <summary>
         /// The player information
         /// </summary>
-        private readonly PlayerInformation _playerInformation = null;
+        private readonly IPlayerInformation _playerInformation = null;
 
         /// <summary>
         /// The total points
@@ -59,7 +59,7 @@ namespace FPL.Data.Models.SummaryStats
         /// </summary>
         /// <param name="playerInformation">The player information.</param>
         /// <exception cref="System.ArgumentNullException">The playerInformation shold not be null!</exception>
-        public FantasyPremierLeagueInfoSummary(PlayerInformation playerInformation)
+        public FantasyPremierLeagueInfoSummary(IPlayerInformation playerInformation)
         {
             if (playerInformation == null)
             {
@@ -132,7 +132,7 @@ namespace FPL.Data.Models.SummaryStats
             {
                 if (Math.Abs(this._form) < 0.001)
                 {
-                    List<History> allMatches = this._playerInformation
+                    List<IHistory> allMatches = this._playerInformation
                     .Histories
                     .Where(h => h.KickoffTime > DateTime.Now.AddMonths(-1))
                     .ToList();

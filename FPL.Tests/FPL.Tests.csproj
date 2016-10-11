@@ -58,6 +58,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FPL.Data.Common\FPL.Data.Common.csproj">
+      <Project>{58498F3B-0CD7-456E-A096-644BFE234808}</Project>
+      <Name>FPL.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FPL.Data.Models\FPL.Data.Models.csproj">
       <Project>{C55CDB95-A7A3-40BE-B774-62968C1B6BF3}</Project>
       <Name>FPL.Data.Models</Name>
